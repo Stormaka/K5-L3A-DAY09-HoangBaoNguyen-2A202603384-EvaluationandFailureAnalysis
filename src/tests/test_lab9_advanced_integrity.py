@@ -115,3 +115,5 @@ def test_reply_amount_parser():
           {"kind": "reply", "payload": {"text": "hoàn phí 1.250.000 đồng, mã O-202"}},
           {"kind": "quote", "payload": {"text": "99.000đ"}}]
     assert reply_amounts(ev) == [35000, 1250000]
+    other = [{"kind": "reply", "payload": {"text": "Đã hoàn 35k, phần còn lại 1,2 triệu đồng và 20 nghìn đ; 15,000 VND"}}]
+    assert reply_amounts(other) == [35000, 1200000, 20000, 15000]

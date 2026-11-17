@@ -71,6 +71,9 @@ class RefundAmountCorrect(Evaluator[Any, Trial]):
 
 
 MONEY_RE = re.compile(r"(\d{1,3}(?:[.,\s]\d{3})+|\d+)\s*(?:đồng|đ|₫|vnd|VND|VNĐ)(?![\w])")
+# "35k", "35 nghìn", "35 ngàn", "1,2 triệu" (with or without a trailing currency word)
+SCALED_RE = re.compile(r"(\d+(?:[.,]\d+)?)\s*(k|K|nghìn|ngàn|triệu|tr)(?![\w])")
+_SCALE = {"k": 1_000, "nghìn": 1_000, "ngàn": 1_000, "triệu": 1_000_000, "tr": 1_000_000}
 
 
 def reply_amounts(events: list[dict[str, Any]]) -> list[int]:
@@ -80,6 +83,9 @@ def reply_amounts(events: list[dict[str, Any]]) -> list[int]:
         if e.get("kind") != "reply":
             continue
         text = str((e.get("payload") or {}).get("text") or "")
+        for m in SCALED_RE.finditer(text):
+            out.append(round(float(m.group(1).replace(",", ".")) * _SCALE[m.group(2).lower()]))
+        text = SCALED_RE.sub(" ", text)
         out += [int(re.sub(r"\D", "", m)) for m in MONEY_RE.findall(text)]
     return out
 
