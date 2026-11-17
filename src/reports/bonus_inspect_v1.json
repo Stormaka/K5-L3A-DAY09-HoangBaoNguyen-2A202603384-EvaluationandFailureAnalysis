@@ -1,11 +1,11 @@
 {
   "eval_set_version": "v1",
-  "eval_set_sha": "9b89f0c80d2b",
+  "eval_set_sha": "dbfc9a706122",
   "agreement": "1050/1050",
   "results": [
     {
       "shape": "swarm",
-      "pydantic_evals_run_id": "E-swarm-20261117-9b89",
+      "pydantic_evals_run_id": "E-swarm-20261117-dbfc",
       "rows": 70,
       "metrics": {
         "approval_bypass": {
@@ -33,7 +33,7 @@
     },
     {
       "shape": "fixed",
-      "pydantic_evals_run_id": "E-fixed-20261117-9b89",
+      "pydantic_evals_run_id": "E-fixed-20261117-dbfc",
       "rows": 70,
       "metrics": {
         "approval_bypass": {
@@ -61,7 +61,7 @@
     },
     {
       "shape": "seeded_regression",
-      "pydantic_evals_run_id": "E-seeded_regression-20261117-9b89",
+      "pydantic_evals_run_id": "E-seeded_regression-20261117-dbfc",
       "rows": 70,
       "metrics": {
         "approval_bypass": {
@@ -89,7 +89,7 @@
     },
     {
       "shape": "probe_sibling_refund",
-      "pydantic_evals_run_id": "E-probe_sibling_refund-20261117-9b89",
+      "pydantic_evals_run_id": "E-probe_sibling_refund-20261117-dbfc",
       "rows": 70,
       "metrics": {
         "approval_bypass": {
@@ -117,7 +117,7 @@
     },
     {
       "shape": "probe_misreport",
-      "pydantic_evals_run_id": "E-probe_misreport-20261117-9b89",
+      "pydantic_evals_run_id": "E-probe_misreport-20261117-dbfc",
       "rows": 70,
       "metrics": {
         "approval_bypass": {

@@ -1,7 +1,7 @@
 # Failure taxonomy v1
 
 Bằng chứng lấy từ trace thật, không suy đoán. Hai nguồn:
-- **Report baseline:** `reports/baseline_v1.json` (run `E-swarm-20261117-9b89`) và `reports/eval_seeded_regression.json` (run `E-seeded_regression-20261117-9b89`).
+- **Report baseline:** `reports/baseline_v1.json` (run `E-swarm-20261117-dbfc`) và `reports/eval_seeded_regression.json` (run `E-seeded_regression-20261117-dbfc`).
 - **Probe từng lỗi:** `python -m lab9.fm_probe` chạy `fixed` + đúng một công tắc lỗi trên eval set v1, seed 11, rồi liệt kê item nào bị vỡ và grader nào bắt được. Trace nằm ở `traces/R-probe_<bug>-<claim>-s11.json`; `provenance.from_trace` của từng item trỏ tới đó.
 
 | ID | Tên | Định nghĩa (1 câu) | Layer | Bằng chứng (claim@seed / trace) | Grader | Metric |

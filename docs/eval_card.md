@@ -2,8 +2,8 @@
 
 Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10. Mọi số dưới đây lấy từ report do `lab9.eval` sinh ra (dẫn run ID), không gõ tay.
 
-- **Run ID / eval set SHA:** baseline `E-swarm-20261117-9b89` · eval set v1 `9b89f0c80d2b`
-- **Phiên bản:** code: commit chứa card này trên `starter/d09` (gốc Lab 8 `33d7091`) · eval set v1 (sha `9b89f0c80d2b`) · `metric_spec_version` 1.0 · grader `lab9/graders.py` cùng commit · seeds 11/22/33/44/55
+- **Run ID / eval set SHA:** baseline `E-swarm-20261117-dbfc` · eval set v1 `dbfc9a706122`
+- **Phiên bản:** code: commit chứa card này trên `starter/d09` (gốc Lab 8 `33d7091`) · eval set v1 (sha `dbfc9a706122`) · `metric_spec_version` 1.0 · grader `lab9/graders.py` cùng commit · seeds 11/22/33/44/55
 - **Eval set:** v1, 14 item × 5 seed = 70 trial, nguồn `lab8_public`; nhãn tách riêng ở `labels_v1.json`; `failure_modes` theo `docs/failure_taxonomy.md`; `evalset --check` 0 problem
 - **Agent đo:** shape `swarm` (`lab8/shapes/swarm_reference.py`) chạy MockLLM; variant `fixed` / `seeded_regression` từ `lab9/variants.py`
 
@@ -20,7 +20,7 @@ Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10. Mọi s�
 | pass_5, cost_per_success | theo dõi | min 0.80 / tăng ≤ 10% | không |
 
 ## Kết quả baseline vs PR (paired bootstrap, 1000 resample, rng 2027, 95%)
-| Metric | baseline `E-swarm-…-9b89` | fixed `E-fixed-…-9b89` | seeded_regression `E-seeded_regression-…-9b89` |
+| Metric | baseline `E-swarm-…-dbfc` | fixed `E-fixed-…-dbfc` | seeded_regression `E-seeded_regression-…-dbfc` |
 |---|---|---|---|
 | pass_rate | 0.9857 | 1.0 · Δ +0.014 CI [+0.000, +0.043] | **0.7143 · Δ −0.271 CI [−0.500, −0.057] BLOCK** |
 | refund_amount_correct | 0.9857 | 1.0 · Δ +0.014 | **0.8571 · Δ −0.129 CI [−0.315, +0.000] BLOCK** (dưới sàn) |
@@ -45,7 +45,7 @@ M3 (`python -m lab9.mutation --detect`): phát hiện **100%** dòng fail của 
 
 ## v2 (Advanced / Expert): eval set v2, slice gate, pass^k, chống gian lận eval
 
-- **Run ID / eval set SHA:** baseline `E-swarm-20261117-9124` · eval set v2 `91248f5ef4da` (28 item = 14 v1 + 14 adversarial) × 5 seed · `metric_spec_version` 2.0
+- **Run ID / eval set SHA:** baseline `E-swarm-20261117-50a4` · eval set v2 `50a4cfab695e` (28 item = 14 v1 + 14 adversarial) × 5 seed · `metric_spec_version` 2.0
 - **Baseline v2:** pass_rate 0.9786 · refund_amount_correct 0.9786 · reply_matches_ledger 1.0 · pass_hat_5 0.8929 · pass_at_5 1.0 · approval_bypass 0 · secret_leak 0
 
 ### Ngưỡng chọn từ A/A

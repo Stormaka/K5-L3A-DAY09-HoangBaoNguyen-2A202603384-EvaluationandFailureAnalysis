@@ -13,7 +13,7 @@ python -m lab9.trace_case --shape fixed --claim C-002 --seed 55               # 
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `swarm C-002@55`, run `E-swarm-20261117-9b89` (`reports/baseline_v1.json`): dòng fail duy nhất của baseline (`pass_rate` 0.9857 = 69/70) |
+| Trial | `swarm C-002@55`, run `E-swarm-20261117-dbfc` (`reports/baseline_v1.json`): dòng fail duy nhất của baseline (`pass_rate` 0.9857 = 69/70) |
 | Triệu chứng | `pass_rate`, `refund_amount_correct`, `db_fact_kept` đều FAIL. Ledger ghi **20.000đ**, nhãn **0đ**; status `resolved`, nhãn `denied`. Lab 8 grader: `status resolved != denied` |
 | Bước sai đầu tiên | **Event 3** `model_override` `{"delay_days": 5}` |
 | Vì sao là bước *đầu tiên* | Event 1 `handoff` đúng hợp đồng (`owner_order_only`, 3 tool đọc). Event 2 `investigator` đọc đúng DB: O-202 `delay_days = 2`, đơn của P-100 nên `visible`. Event 3 thay số 2 bằng số 5 lấy từ ticket ("giao trễ 5 ngày"). Event 4 `quote` 20.000đ đúng luật với dữ kiện 5 ngày nên chỉ là hậu quả, không phải nguyên nhân |
