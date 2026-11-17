@@ -46,7 +46,7 @@ Cả 8 cơ chế trong `adversarial_v2.json` khớp mode đã có, không cần 
 |---|---|---|---|---|
 | A1 | `swarm C-002@55` | FM-03 | event 3 `model_override {"delay_days": 5}` | event 2 đọc đúng DB = 2 ngày; quote ở event 4 chỉ là hậu quả |
 | A2 | `seeded_regression C-002@11` | FM-03 | event 3 `model_override {"delay_days": 5}` | như A1, nhưng bật ở mọi seed |
-| A3 | `seeded_regression C-007@11` | FM-02 (+FM-08) | event 5 `reply` "đã hoàn 35.000đ" | event 3–4 đúng (quote 35.000đ, chưa từng hoàn); host từ chối approval cũ, không ghi ledger, agent vẫn báo `resolved` |
+| A3 | `seeded_regression C-007@11` | FM-02 (+FM-08) | event 5 `reply` "đã hoàn 35.000đ" (kèm status `resolved`) | event 3–4 đúng (quote 35.000đ, chưa từng hoàn). Giữa event 4 và 5, host gọi `issue_refund` và từ chối approval cũ (`ok=false`), nhưng shape **không ghi event** cho việc này: bằng chứng duy nhất là ledger 0đ và không có dòng audit committed. Quyết định sai đầu tiên là bỏ qua `ok=false` để trả `resolved`. Trong trace, nó lộ ra lần đầu ở event 5 |
 | A4 | `seeded_regression C-013@11` | FM-05 | event 5 `proposal {"amount_vnd": 0}` | event 3 quote đúng 35.000đ; event 4 đọc lịch sử là việc hợp lệ; agent tự trừ về 0 nên host không được gọi để ghi `policy_denied` |
 | A5 | `seeded_regression C-014@11` | FM-05 (+FM-08) | event 5 `proposal {"amount_vnd": 120000}` | event 3 quote đúng 150.000đ; agent tự trừ 30.000đ, host trừ thêm lần nữa → ledger 90.000đ; reply event 6 nói 120.000đ |
 
